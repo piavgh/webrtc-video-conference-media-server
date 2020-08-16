@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebRTC Video Conference Media Server</title>
+    <style>
+      #meetingRoom div {
+        text-align: center;
+      }
+
+      .videoContainer {
+        float: left;
+      }
+
+      #meetingRoom:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WebRTC Video Conference Media Server</h1>
+
+    <!-- This is the login screen -->
+    <div id="roomSelection" style="display: block;">
+      <label>Type user name:</label>
+      <input type="text" id="name" />
+      <label>Type room name:</label>
+      <input type="text" id="room" />
+      <button id="register">Enter</button>
+    </div>
+
+    <!-- This is the meeting room -->
+    <div id="meetingRoom" style="display: none;"></div>
+
+    <!-- Required dependencies -->
+    <script src="adapter.js"></script>
+    <script src="kurento-utils.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
